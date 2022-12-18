@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Page</title>
+    <style>
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        max-width: 100vw;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1240px;
+        margin: 3rem auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border: 1px solid #d7d7d7;
+        border-radius: 11px;
+        box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .grid-left {
+        background: green;
+        padding: 1.5rem;
+        color: #fff;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .image-box img {
+        border-radius: 50%;
+        border: 10px solid #fff;
+      }
+
+      .grid-right {
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 1.2rem;
+        line-height: 2;
+      }
+
+      .user-detail {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid-left">
+        <div class="image-box">
+          <img src="https://i.pravatar.cc/300" alt="user icon" />
+        </div>
+        <div class="basic-detail">
+          <h2 class="user-name">{%USER_FIRSTNAME%}&nbsp;{%USER_LASTNAME%}</h2>
+          <p class="user-detail">Age: {%AGE%}</p>
+          <p class="user-detail">Gender: {%GENDER%}</p>
+          <p class="user-detail">Phone: {%PHONE%}</p>
+          <p class="user-detail">Email: {%EMAIL%}</p>
+        </div>
+      </div>
+      <div class="grid-right">
+        <div class="col">
+          <p class="user-detail">Website:</p>
+          <p>{%WEBSITE%}</p>
+          <p class="user-detail">Birthdate:</p>
+          <p>{%BOD%}</p>
+          <p class="user-detail">Height:</p>
+          <p>{%HEIGHT%}</p>
+          <p class="user-detail">Weight:</p>
+          <p>{%WEIGHT%}</p>
+        </div>
+        <div class="col">
+          <p class="user-detail">Address:</p>
+          <p>{%ADDRESS%}, {%ZIP%}, {%CITY%} {%STATE%}</p>
+          <p class="user-detail">Company:</p>
+          <p>{%COMPANY%}</p>
+          <p class="user-detail">Department:</p>
+          <p>{%DEPARTMENT%}</p>
+          <p class="user-detail">Title:</p>
+          <p>{%TITLE%}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+module.exports = (temp, user) => {
+  let output = temp.replace(/{%USER_FIRSTNAME%}/g, user.firstName);
+  output = output.replace(/{%USER_LASTNAME%}/g, user.lastName);
+  output = output.replace(/%IMAGE%/g, user.image);
+  output = output.replace(/{%AGE%}/g, user.age);
+  output = output.replace(/{%GENDER%}/g, user.gender);
+  output = output.replace(/{%EMAIL%}/g, user.email);
+  output = output.replace(/{%PHONE%}/g, user.phone);
+  output = output.replace(/{%WEBSITE%}/g, user.domain);
+  output = output.replace(/{%BOD%}/g, user.birthDate);
+  output = output.replace(/{%HEIGHT%}/g, user.height);
+  output = output.replace(/{%WEIGHT%}/g, user.weight);
+  output = output.replace(/{%ADDRESS%}/g, user.address.address);
+  output = output.replace(/{%ZIP%}/g, user.address.postalCode);
+  output = output.replace(/{%CITY%}/g, user.address.city);
+  output = output.replace(/{%STATE%}/g, user.address.state);
+  output = output.replace(/{%COMPANY%}/g, user.company.name);
+  output = output.replace(/{%DEPARTMENT%}/g, user.company.department);
+  output = output.replace(/{%TITLE%}/g, user.company.title);
+  output = output.replace(/{%ID%}/g, user.id);
+  return output;
+};
